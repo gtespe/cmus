@@ -140,7 +140,15 @@ static void print_time(int t)
 	stack[p++] = s / 10 + '0';
 	stack[p++] = ':';
 	stack[p++] = m % 10 + '0';
-	stack[p++] = m / 10 + '0';
+
+    //only add the 0 if it is longer than 10 min
+    if(m/10 > 0){
+        stack[p++] = m / 10 + '0';
+    }
+    else{
+        stack[p++] = ' ';
+    }
+
 	if (h) {
 		stack[p++] = ':';
 		do {
